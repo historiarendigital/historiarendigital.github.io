@@ -5,6 +5,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Historiar en Digital</title>
   <link rel="stylesheet" href="assets/css/main.css" />
+  <style>
+  nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 1rem;
+  }
+  nav ul li {
+    position: relative;
+  }
+  nav ul li ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    border: 1px solid #ccc;
+    z-index: 1000;
+  }
+  nav ul li:hover ul {
+    display: block;
+  }
+  nav ul li ul li {
+    white-space: nowrap;
+    padding: 0.5em 1em;
+  }
+  nav ul li ul li a {
+    text-decoration: none;
+    color: #000;
+  }
+</style>
 </head>
 <body class="is-preload">
 
@@ -27,26 +59,6 @@
           </header>
           <p>Proyecto de historia digital crítica y colaborativa desde el Sur. Navegá por nuestras secciones temáticas para explorar artículos, proyectos, recursos, y más.</p>
         </section>
-
-        <!-- Secciones principales -->
-        <section>
-          <header class="major">
-            <h2>Secciones del sitio</h2>
-          </header>
-          <ul>
-            <li><a href="publicaciones.html">Publicaciones</a></li>
-            <li><a href="posteos-columnas.html">Posteos y columnas</a></li>
-            <li><a href="resenas.html">Reseñas</a></li>
-            <li><a href="novedades.html">Novedades del campo</a></li>
-            <li><a href="tutoriales.html">Tutoriales y herramientas</a></li>
-            <li><a href="multimedia.html">Multimedia</a></li>
-            <li><a href="proyectos.html">Proyectos</a></li>
-            <li><a href="archivos-memorias.html">Archivos y Memorias Digitales</a></li>
-            <li><a href="ensenar-historia.html">Para enseñar Historia en Digital</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
-          </ul>
-        </section>
-
       </div>
     </div>
 
