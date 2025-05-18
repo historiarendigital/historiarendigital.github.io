@@ -4687,3 +4687,7 @@ input, select, textarea {
 		}
 
 	}
+/* Ajuste personalizado para reducir espacio vertical del encabezado */
+#header {
+  padding: 3em 0 1em 0 !important;
+}
