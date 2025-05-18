@@ -1,10 +1,12 @@
 let idx = null;
 let documents = [];
 
+// Cargar el índice desde buscador.json
 fetch("buscador.json")
   .then(response => response.json())
   .then(data => {
     documents = data;
+
     idx = lunr(function () {
       this.ref('id');
       this.field('title');
@@ -15,10 +17,25 @@ fetch("buscador.json")
         this.add(doc);
       });
     });
+
+    // Si hay un parámetro ?query en la URL, hacer la búsqueda automáticamente
+    const params = new URLSearchParams(window.location.search);
+    const initialQuery = params.get("query");
+
+    if (initialQuery) {
+      const input = document.getElementById('searchBox');
+      input.value = initialQuery;
+      runSearch(initialQuery);
+    }
   });
 
+// Escuchar mientras se escribe
 document.getElementById('searchBox').addEventListener('input', function () {
-  const query = this.value;
+  runSearch(this.value);
+});
+
+// Función de búsqueda reutilizable
+function runSearch(query) {
   const results = idx.search(query);
   const resultBox = document.getElementById('searchResults');
   resultBox.innerHTML = '';
@@ -33,4 +50,5 @@ document.getElementById('searchBox').addEventListener('input', function () {
   if (results.length === 0 && query.length > 2) {
     resultBox.innerHTML = '<li>No se encontraron resultados.</li>';
   }
-});
+}
+
