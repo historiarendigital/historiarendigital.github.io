@@ -1,36 +1,63 @@
-let idx = null;
-let documents = [];
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Buscar | Historiar en Digital</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <script src="https://unpkg.com/lunr/lunr.js"></script>
+</head>
+<body class="is-preload">
 
-fetch("buscador.json")
-  .then(response => response.json())
-  .then(data => {
-    documents = data;
-    idx = lunr(function () {
-      this.ref('id');
-      this.field('title');
-      this.field('content');
+  <!-- Wrapper -->
+  <div id="wrapper">
 
-      documents.forEach((doc, i) => {
-        doc.id = i;
-        this.add(doc);
-      });
-    });
-  });
+    <!-- Encabezado opcional -->
+    <header id="header">
+      <h1><a href="index.html">Historiar en Digital</a></h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="divulgacion.html">Divulgación</a></li>
+          <li><a href="investigacion.html">Investigación</a></li>
+          <li><a href="proyectos.html">Proyectos</a></li>
+          <li><a href="quienes-somos.html">Quiénes somos</a></li>
+          <li><a href="buscar.html" class="active"><i class="fas fa-search"></i> Buscar</a></li>
+        </ul>
+      </nav>
+    </header>
 
-document.getElementById('searchBox').addEventListener('input', function () {
-  const query = this.value;
-  const results = idx.search(query);
-  const resultBox = document.getElementById('searchResults');
-  resultBox.innerHTML = '';
+    <!-- Contenido principal -->
+    <section id="main" class="wrapper">
+      <div class="inner">
 
-  results.forEach(result => {
-    const item = documents[result.ref];
-    const li = document.createElement('li');
-    li.innerHTML = `<strong><a href="${item.url}">${item.title}</a></strong><br><small>${item.content.slice(0, 100)}...</small>`;
-    resultBox.appendChild(li);
-  });
+        <header class="major">
+          <h2>Buscar en el sitio</h2>
+        </header>
 
-  if (results.length === 0 && query.length > 2) {
-    resultBox.innerHTML = '<li>No se encontraron resultados.</li>';
-  }
-});
+        <!-- Campo de búsqueda -->
+        <input type="text" id="searchBox" placeholder="Escribí para buscar..." style="width: 100%; padding: 10px; font-size: 1em;">
+
+        <!-- Resultados -->
+        <ul id="searchResults" style="margin-top: 2em;"></ul>
+
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+      <ul class="icons">
+        <li><a href="https://x.com/HistoriarEnRed" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+        <li><a href="https://instagram.com/historiarendigital" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+        <li><a href="https://youtube.com/@HistoriarEnDigital" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+        <li><a href="https://linktr.ee/historiarendigital" class="icon solid fa-link"><span class="label">Linktree</span></a></li>
+      </ul>
+      <p>© 2025 Historiar en Digital. Licencia <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a></p>
+    </footer>
+
+  </div>
+
+  <!-- Scripts -->
+  <script src="buscar.js"></script>
+</body>
+</html>
