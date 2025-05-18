@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="assets/css/main.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
 
-  <!-- Lunr.js (motor de búsqueda) -->
+  <!-- Lunr.js -->
   <script src="https://unpkg.com/lunr/lunr.js"></script>
 </head>
 <body class="is-preload">
@@ -35,6 +35,10 @@
     <!-- Contenido principal -->
     <section id="main" class="wrapper">
       <div class="inner">
+
+        <!-- Botón volver contextual -->
+        <div id="volverContainer" style="display: flex; justify-content: flex-start; margin-bottom: 2em;"></div>
+
         <header class="major">
           <h2>Buscar en el sitio</h2>
         </header>
@@ -44,6 +48,7 @@
 
         <!-- Resultados -->
         <ul id="searchResults" style="margin-top: 2em;"></ul>
+
       </div>
     </section>
 
@@ -59,8 +64,32 @@
     </footer>
   </div>
 
-  <!-- Script que maneja la búsqueda -->
+  <!-- Script del buscador -->
   <script src="buscar.js"></script>
+
+  <!-- Script para mostrar el botón "volver" contextual -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const volverDiv = document.getElementById('volverContainer');
+      const params = new URLSearchParams(window.location.search);
+      const origen = params.get("from");
+
+      let enlace = "index.html";
+      let texto = "← Volver al Inicio";
+
+      if (origen === "secciones") {
+        enlace = "secciones.html";
+        texto = "← Volver a Secciones";
+      }
+
+      const boton = document.createElement("a");
+      boton.href = enlace;
+      boton.className = "button small";
+      boton.innerText = texto;
+
+      volverDiv.appendChild(boton);
+    });
+  </script>
 </body>
 </html>
 
