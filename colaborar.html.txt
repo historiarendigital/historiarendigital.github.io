@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Participar del Proyecto | Historiar en Digital</title>
+  <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body class="is-preload">
+
+<!-- Wrapper -->
+<div id="wrapper">
+
+  <!-- Header -->
+  <header id="header">
+    <h1><a href="index.html">Historiar en Digital</a></h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="quienes-somos.html">Quiénes somos</a></li>
+        <li><a href="proyectos.html">Proyectos</a></li>
+        <li><a href="divulgacion.html">Divulgación</a></li>
+        <li><a href="investigacion.html">Investigación</a></li>
+        <li><a href="colaborar.html" class="active">Participar</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main -->
+  <div id="main" class="alt">
+    <section id="one">
+      <div class="inner">
+
+        <header class="major">
+          <h2>Guía para colaborar con Historiar en Digital</h2>
+        </header>
+        <p>Este espacio reúne los lineamientos para quienes deseen participar en la producción de contenidos, investigaciones o experiencias dentro de <em>Historiar en Digital</em>. Se promueve una práctica académica crítica, situada y colectiva.</p>
+
+        <h3>Guía de colaboradorxs</h3>
+        <p>Puedes consultar la guía completa aquí: <a href="documentos/guia-colaboradores.pdf" target="_blank">Descargar Guía (PDF)</a>.</p>
+
+        <h3>Política editorial</h3>
+        <p>Los contenidos publicados deberán respetar criterios de trazabilidad, autoría identificada, ética académica y respeto por las memorias subalternas. Se priorizan aportes originales, con licencia abierta y citación precisa de fuentes.</p>
+
+        <h3>Checklist de trazabilidad</h3>
+        <ul>
+          <li>¿Todas las fuentes están correctamente citadas?</li>
+          <li>¿El texto explicita cómo se construyen los argumentos?</li>
+          <li>¿Se declara el uso de IA u otras herramientas digitales?</li>
+          <li>¿Se enuncian marcos teóricos o enfoques historiográficos?</li>
+          <li>¿El contenido respeta los principios ético-académicos del proyecto?</li>
+        </ul>
+
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="inner">
+      <ul class="copyright">
+        <li>&copy; Historiar en Digital</li>
+        <li>Diseño: HTML5 UP | Adaptación: Claudia Santa Cruz</li>
+      </ul>
+    </div>
+  </footer>
+
+</div>
+
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>
